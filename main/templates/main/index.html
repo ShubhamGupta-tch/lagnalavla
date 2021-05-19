@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
     <style type="text/css">
         h1{
             color: teal;
@@ -15,5 +12,5 @@
         <h1>Welcome, this is the Django Masterpiece!</h1>
         <p>This is super amamzing. Isnt it. Click <a href="{% url 'greet' name='bro' %}">here</a></p>
     </center>
-</body>
-</html>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Todo{% endblock %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="text" name="todo" placeholder="Enter a Todo">
+    <button type="submit">Add</button>
+</form>
+
+<h3>Things To Do</h3>
+
+<ul>
+    {% for todo in todos %}
+        <li>{{todo}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

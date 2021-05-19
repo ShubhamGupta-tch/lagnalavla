@@ -9,3 +9,18 @@ def greet(request, name):
     return render(request, 'main/greet.html', {
             'name': name,
         })
+
+def todo(request):
+    if request.method == 'POST':
+        request.session['todos'] += [request.POST['todo']]
+
+    try:
+        todos = request.session['todos']
+
+    except:
+        request.session['todos'] = []
+        todos = request.session['todos']
+
+    return render(request, 'main/todo.html', {
+            'todos': todos,
+        })
